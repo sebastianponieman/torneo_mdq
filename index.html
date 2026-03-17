@@ -42,6 +42,32 @@ body{font-family:'DM Sans',sans-serif;background:var(--cr);color:var(--tx);min-h
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem}
 @media(max-width:680px){.g2{grid-template-columns:1fr}}
 @media(max-width:560px){.g3{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .hdr{padding:0 .875rem}
+  .hbrand h1{font-size:1rem}
+  .hbrand span{font-size:9px}
+  .main{padding:1rem .75rem 4rem}
+  .card{padding:.875rem}
+  .ptitle{font-size:1.25rem;margin-bottom:1rem}
+  .hero{padding:1.5rem 1.125rem}
+  .hero h2{font-size:1.35rem}
+  .hero p{font-size:12px}
+  .navbtn{padding:.6rem .75rem;font-size:12px}
+  .sinp{font-size:16px;padding:5px 0}
+  .sct td{padding:4px 1px}
+  .sct{min-width:460px}
+  input[type=text],input[type=number],select{padding:11px 10px;font-size:16px}
+  .btn{padding:11px 16px;font-size:14px}
+  .btnsm{padding:9px 12px;font-size:13px}
+  .btng{padding:13px 20px;font-size:15px}
+  .hcpt{min-width:480px}
+  .hcpi{width:48px;padding:8px 4px;font-size:15px}
+  .mpvs{grid-template-columns:1fr 22px 1fr;gap:4px;padding:.625rem}
+  .mpname{font-size:.85rem}
+  .mval{font-size:1.1rem}
+  .lhdr,.lr{font-size:12px}
+  .pcirc{width:22px;height:22px;font-size:11px}
+}
 label{display:block;font-size:11px;font-weight:500;color:var(--tm);margin-bottom:3px;letter-spacing:.03em;text-transform:uppercase}
 input[type=text],input[type=number],select{width:100%;padding:8px 10px;border-radius:var(--r);border:1px solid var(--crd);background:var(--cr);color:var(--tx);font-size:13px;font-family:'DM Sans',sans-serif;transition:border-color .15s;-moz-appearance:textfield}
 input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
@@ -232,7 +258,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   <div class="ey">Configuración</div>
   <div class="ptitle">HCP por ronda</div>
   <div class="ibox">El HCP varía según el campo. Se guarda automáticamente en este dispositivo.</div>
-  <div class="card"><table class="hcpt" id="hcptbl"></table></div>
+  <div class="card"><div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="hcpt" id="hcptbl"></table></div></div>
   <div style="display:flex;justify-content:flex-end">
     <button class="btn btnp" onclick="saveHcp()">Guardar HCPs</button>
   </div>
@@ -243,7 +269,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   <div class="ptitle">Cargar tarjeta</div>
   <div class="card" style="margin-bottom:.875rem">
     <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
-      <div style="flex:1;min-width:120px">
+      <div style="flex:1;min-width:140px">
         <label>Jugador</label>
         <select id="selP" onchange="onSel()">
           <option value="">— seleccionar —</option>
@@ -255,7 +281,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
           <option value="5">Sereba</option>
         </select>
       </div>
-      <div style="flex:1.3;min-width:150px">
+      <div style="flex:2;min-width:160px">
         <label>Ronda / Campo</label>
         <select id="selR" onchange="onSel()">
           <option value="t1A">T1 — Campo A (Acantilados)</option>
@@ -264,9 +290,9 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
           <option value="t2r2">T2 R2 — Campo B (Sierra Padres)</option>
         </select>
       </div>
-      <div style="min-width:86px">
+      <div style="min-width:90px">
         <label>HCP ronda</label>
-        <input type="number" id="ihcp" min="0" max="54" value="0" style="width:86px" oninput="updateInlineHcp()">
+        <input type="number" id="ihcp" min="0" max="54" value="0" style="width:90px" oninput="updateInlineHcp()">
       </div>
     </div>
   </div>
